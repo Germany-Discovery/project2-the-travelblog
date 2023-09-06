@@ -23,17 +23,28 @@ body {
 }
 
 .borderDetails img {
-  height: auto;
-  padding: 0;
-  align-items: center;
-  width: auto; 
+  max-height: 100%; 
+  padding: 10px;
+  display: block; 
+  margin: 0 auto; 
+  max-width: 100%;
   text-align: center; 
-  border-style: hidden;
+  border: 1px solid black; 
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-slide {
+  display: inline-block;
+  width: 100%;
 }
 
 a {
   color: red
-  
 }
 
 

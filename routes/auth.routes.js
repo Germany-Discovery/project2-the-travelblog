@@ -39,6 +39,8 @@ router.post("/auth/signup", isLoggedOut, (req, res) => {
     return;
   }
 
+  // console.log ("IN THE ROUTES AUTH 4  *********");
+
   if (password.length < 6) {
     res.status(400).render("auth/signup", {
       errorMessage: "Your password needs to be at least 6 characters long.",
@@ -47,7 +49,7 @@ router.post("/auth/signup", isLoggedOut, (req, res) => {
     return;
   }
 
-  // This regular expression checks password for special characters and minimum length
+  //   ! This regular expression checks password for special characters and minimum length
   
   // const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   // if (!regex.test(password)) {
@@ -58,6 +60,8 @@ router.post("/auth/signup", isLoggedOut, (req, res) => {
   //   });
   //   return;
   // }
+ 
+  
 
   // Create a new user - start by hashing the password
   bcrypt
@@ -85,12 +89,14 @@ router.post("/auth/signup", isLoggedOut, (req, res) => {
     });
 });
 
-// GET /auth/login
+// GET /auth/login  (LOGIN)
 router.get("/auth/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
 });
 
-// POST /auth/login
+
+
+// POST /auth/login  (LOGIN)
 router.post("/auth/login", isLoggedOut, (req, res, next) => {
   const { username, email, password } = req.body;
 
@@ -140,8 +146,8 @@ router.post("/auth/login", isLoggedOut, (req, res, next) => {
           req.session.currentUser = user.toObject();
           // Remove the password field
           delete req.session.currentUser.password;
-
-          res.redirect("/");
+          res.redirect('/');
+          
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })

@@ -1,56 +1,45 @@
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>{{appTitle}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{appTitle}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
+
 <body>
-  <nav>
-    <a href="/">Home 2</a>
-    <a href="/cities">Cities</a>
+
+ <nav>
+  <a href="/">Home</a>
+  <a href="/cities">Cities</a>
+  <a href="/cities/cities-create">Create new city</a>
+   <a href="/auth/login">Login</a>  
+    <a href="/auth/logout">Logout</a>
+  <!-- {{#if isLoggedIn}} 
     <a href="/cities/cities-create">Create new city</a>
-    <a href="/">Blogs</a>
-    <a href="/auth/login">Login</a> <a href="/auth/logout">Logout</a>
-    <!--<a href="/auth/signup">Signup</a> -->
+    <a href="/auth/logout">Logout</a>
+  {{else}}
+    <a href="/auth/login">Login</a>  
+     <a href="/auth/logout">Logout</a>
+     <a href="/auth/signup">Signup</a> 
+  {{/if}}
+  -->
+</nav>
 
 
     {{{body}}}
 
-    <script src="/js/script.js"></script>
-</body>
-</nav>
+      <script src="/js/script.js"></script>
+  </body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-8 col-centered">
-            <div class="Discover-Deutschland">
-                <img src="/public/images/Berlincvr.jpg" class="img-responsive">
-            </div>
-        </div>
-    </div>
-</div>
+</html>
 
 
 
+          
+     
 
 
-{{!-- <nav>
-  <ul class="drop-down closed">
-    <li><a href="/cities" class="nav-button">Cities</a></li>
-    <li><a href="#">Aachen</a></li>
-    <li><a href="#">Berlin</a></li>
-    <li><a href="#">Cologne</a></li>
-    <li><a href="#">Dresden</a></li>
-    <li><a href="#">Hamburg</a></li>
-    <li><a href="#">Heidelberg</a></li>
-    <li><a href="#">Munich</a></li>
-    <li><a href="#">Rothenburg</a></li>
-  </ul>
-  <a href="/cities/cities-create">Create new City</a>
-  <a href="/">About Us</a>
-  <a href="/login">Login </a>
-</nav> --}}
+

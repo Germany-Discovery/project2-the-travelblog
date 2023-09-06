@@ -4,7 +4,7 @@
     <P> Germany has amazing attractions to offer tourists, including elegant palaces and castles, meandering rivers, extensive Alps and medieval cathedrals. The contemporary museums and galleries that display the country’s complex history are also top rated tourist attractions in Germany. With a huge list of must see attractions in Germany, it can be hard to decide what to see first. In this article, you will interact with the top ten tourist attractions in Germany you should explore.</P>
     -->
     <h2>Cities in Germany</h2>
-
+    
     <div class="cities-summary">
         <ul class="city-list">
             {{#each cities}}
@@ -20,10 +20,13 @@
                     <p>Rating: {{this.rating}}</p>
                     <p>Population: {{this.population}}</p>
                     <p>Season: {{this.season}}</p>
-                    <p><a href="/cities/{{this._id}}">More details </a> |  <a href="/cities/{{this._id}}/edit">Edit</a></p>
+                    <p><a href="/cities/{{this._id}}">More details </a> |
+                    <a href="/cities/{{this._id}}/edit">Edit</a></p>
                     <form action="/cities/{{this._id}}/delete" method="POST">
                         <button>Delete</button>
                     </form>
+    
+    
                 </div>
             </li>
             {{/each}}
