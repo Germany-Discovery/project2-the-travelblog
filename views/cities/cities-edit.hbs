@@ -1,62 +1,85 @@
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{appTitle}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
 <h2>Edit the Cities: {{cities.title}}</h2>
 
 
 <form method="POST" action="/cities/{{cities._id}}/edit">
+
 <div class="border">
-    <p><label> Title:
-        <input type="text" name="title" value="{{cities.title}}" />
-    </label></p>
 
-    <p><label> Description:
-        <textarea name="description" cols="30" rows="4">{{cities.description}}</textarea>
-    </label></p>
-
-    <p><label> Rate:
-        <input type="number" name="rating" value="{{cities.rating}}" />
-    </label></p>
-
-     <p><label> Population:
-        <input type="number" name="population" value="{{cities.population}}" />
-    </label></p>
-
-   <!--  <p><label> Season:
-        <input type="enum" name="season" value= "{{cities.season}}" />
-    </label></p>
--->
-
-    <label for="season">Season:
-        <select name="season" id="season">
-            <option value="Spring" {% if cities.season === 'Spring' %}selected{% endif %}>Spring</option>
-            <option value="Summer" {% if cities.season === 'Summer' %}selected{% endif %}>Summer</option>
-            <option value="Autumn" {% if cities.season === 'Autumn' %}selected{% endif %}>Autumn</option>
-            <option value="Winter" {% if cities.season === 'Winter' %}selected{% endif %}>Winter</option>
-        </select>
-   </label>
-   
-<!--
-    <p><label for="imageUrl">Image: {{cities.imageUrl}}</label></p>
-    <input type="file" id="imageUrl" name="imageUrl" value="{{cities.imageUrl}}">
--->
-    <p>
+<table>
+  <tr>
+    <td class="border">
+      <p><label>Title:</label></p>
+      <input type="text" name="title" value="{{cities.title}}" />
+    </td>
+  </tr>
+  <tr>
+    <td class="border">
+      <p><label>Description:</label></p>
+      <textarea name="description" cols="30" rows="4">{{cities.description}}</textarea>
+    </td>
+  </tr>
+  <tr>
+    <td class="border">
+      <p><label>Rate:</label></p>
+      <input type="number" name="rating" value="{{cities.rating}}" />
+    </td>
+  </tr>
+  <tr>
+    <td class="border">
+      <p><label>Population:</label></p>
+      <input type="number" name="population" value="{{cities.population}}" />
+    </td>
+  </tr>
+  <tr>
+    <td class="border">
+      <p><label>Season:</label></p>
+      <select name="season" id="season">
+        <option value="Spring" {% if cities.season === 'Spring' %}selected{% endif %}>Spring</option>
+        <option value="Summer" {% if cities.season === 'Summer' %}selected{% endif %}>Summer</option>
+        <option value="Autumn" {% if cities.season === 'Autumn' %}selected{% endif %}>Autumn</option>
+        <option value="Winter" {% if cities.season === 'Winter' %}selected{% endif %}>Winter</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="border">
+      <p>
         <label for="imageUrl">Current Image:</label>
         <img src="/images/{{ cities.imageUrl }}" alt="Current Image">
-    </p>
-    <!-- Allow the user to upload a new image -->
-    <p>
+      </p>
+      <p>
         <label for="imageUrl">New Image:</label>
         <input type="file" id="imageUrl" name="imageUrl" value="{{ cities.imageUrl }}">
-    </p>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="border">
+      <label for="season"> Season:</label>
+      <select id="seasons" value="{{cities.season}}">
+        <option label="Winter">Winter</option>
+        <option label="Spring">Spring</option>
+        <option label="Summer">Summer</option>
+        <option label="Autumn">Autumn</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="border">
+      <button>Save changes</button>
+    </td>
+  </tr>
+</table>
 
-    <label for="season"> Season:
-        <select id="seasons" value="{{cities.season}}">
-            <option label="Winter">Winter</option>
-            <option label="Spring">Spring</option>
-            <option label="Summer">Summer</option>
-            <option label="Autumn">Autumn</option>
-        </select>
-    </label>
-
-    <button>Save changes</button>
 </div>
-
 </form>
+

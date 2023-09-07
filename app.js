@@ -23,6 +23,12 @@ const projectName = "Discover Germany";
 
 app.locals.appTitle = `${capitalize(projectName)}`;
 
+//user in session available in your views
+    app.use(function (req, res, next) {
+        res.locals.session = req.session.currentUser;
+        next();
+    });
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);

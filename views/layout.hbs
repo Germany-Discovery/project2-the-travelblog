@@ -2,31 +2,30 @@
 
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{appTitle}}</title>
+   
     <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-
 
 <body>
 
  <nav>
-  <a href="/">Home</a>
-  <a href="/cities">Cities</a>
-  <a href="/cities/cities-create">Create new city</a>
-   <a href="/auth/login">Login</a>  
+<a href="/">Home</a>
+<a href="/cities">Cities</a>
+  {{#if session}} 
+    <a href="/cities/cities-create">Add New City</a>
     <a href="/auth/logout">Logout</a>
-  <!-- {{#if isLoggedIn}} 
-    <a href="/cities/cities-create">Create new city</a>
-    <a href="/auth/logout">Logout</a>
+    <a color="blue">Welcome</a>  
+      {{session.username}}
+    </a>
   {{else}}
+    
+    <!--<a href="/auth/signup">Register</a> -->
     <a href="/auth/login">Login</a>  
-     <a href="/auth/logout">Logout</a>
-     <a href="/auth/signup">Signup</a> 
-  {{/if}}
-  -->
+   {{/if}}
+  
 </nav>
+
+
 
 
     {{{body}}}

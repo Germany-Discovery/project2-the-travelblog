@@ -1,7 +1,43 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+
 <div id="login-form">
   <h2>Log In</h2>
   <form action="/auth/login" method="POST">
 
+   <table>
+      <tr>
+        <th>User Details</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Username</td>
+        <td><input type="text" name="username" placeholder="Your username" /></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="email" name="email" placeholder="Your email" /></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" name="password" placeholder="Your password" /></td>
+      </tr>
+    </table>
+
+        <button type="submit">Log In</button>
+
+
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
+
+<!--
     <label> Username
       <input type="text" name="username" placeholder="Your username" />
     </label>
@@ -22,3 +58,5 @@
     {{/if}}
   </form>
 </div>
+
+-->

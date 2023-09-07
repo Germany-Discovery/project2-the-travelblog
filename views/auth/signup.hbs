@@ -1,4 +1,145 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+
+
+</head>
+
+
+<style>
+    /* Center-align content within #form */
+    #form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 10vh; /* Adjust as needed */
+    }
+
+    table {
+        margin-top: 20px; /* Adjust as needed */
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 400px; /* Adjust the maximum width as needed */
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #ee2d2d;
+        color: #fff;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button[type="submit"] {
+        background-color: #e90e0e;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #ee0e0e;
+    }
+
+    .error {
+        color: #ff0000;
+        margin-top: 10px;
+    }
+</style>
+
+
+{{!-- <style>
+        /* Center-align content within #form */
+        #form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 10vh; /* Adjust as needed */
+        }
+        table {
+            margin-top: 20px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <div id="form"> --}}
+
 <div id="form">
+  <h2>Sign Up</h2>
+  
+  <form action="/auth/signup" method="POST">
+    <table>
+      <tr>
+        <th>User Details</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Username</td>
+        <td><input type="text" name="username" placeholder="Your username" /></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="email" name="email" placeholder="Your email" /></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" name="password" placeholder="Your password" /></td>
+      </tr>
+    </table>
+    <button type="submit">Sign Up</button>
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <div id="form">
   <h2>Sign Up</h2>
   <form action="/auth/signup" method="POST">
 
@@ -21,4 +162,4 @@
       <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
-</div>
+</div> --}}

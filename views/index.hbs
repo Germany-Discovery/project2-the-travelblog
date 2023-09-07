@@ -1,31 +1,56 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{appTitle}}</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Style for the container */
+        .image-container {
+            display: flex;
+            justify-content: space-between; /* Images will be evenly spaced */
+            flex-wrap: wrap; /* Wrap to the next line if the screen is narrow */
+        }
 
+        /* Style for individual images */
+        .image {
+            width: 30%; /* Adjust the width as needed */
+            margin-bottom: 20px; /* Add spacing between images */
+        }
+
+         /* Style for the footer */
+        footer {
+            background-color: #e91414;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
 <body>
-    <h1>{{appTitle}} </h1>
-   <!-- <div class="borderDetails">
-    <img src="/images/Berlincvr.jpg" class="img-responsive">
-  </div>  -->
-<div class="borderDetails">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-            <img src="/images/Berlincvr.jpg" alt="Slide 1">
-        </div>
-        <div class="carousel-slide">
-            <img src="/images/Munichcvr.jpg" alt="Slide 2">
-        </div>
-        <div class="carousel-slide">
-            <img src="/images/bavariacvr.jpg" alt="Slide 3">
-        </div>
-    </div>
-</div>
- 
-</body>
+    <h1>{{appTitle}}</h1>
 
- </html>
+    <!-- Image container -->
+    <div class="image-container">
+        <img class="image" src="/images/Berlincvr.jpg" alt="Image 1">
+        <img class="image" src="/images/Munichcvr.jpg" alt="Image 2">
+        <img class="image" src="/images/bavariacvr.jpg" alt="Image 3">
+    </div>
+
+     <!-- Footer -->
+    <footer>
+        <tr>&copy; 2023 
+        
+        </tr>
+        
+    </footer>
+
+    <!-- Bootstrap JS and jQuery dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

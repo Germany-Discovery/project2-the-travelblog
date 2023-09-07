@@ -19,13 +19,13 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 
 // GET /auth/signup (SINGUP)
-router.get("/auth/signup", isLoggedOut, (req, res) => {
+router.get("/auth/signup",  (req, res) => {
   res.render("auth/signup");
 });
 
 
 // POST /auth/signup (SIGNUP)
-router.post("/auth/signup", isLoggedOut, (req, res) => {
+router.post("/auth/signup",  (req, res) => {
   const { username, email, password } = req.body;
   
 
@@ -73,7 +73,7 @@ router.post("/auth/signup", isLoggedOut, (req, res) => {
       return User.create({ username, email, password: hashedPassword });
     })
     .then((user) => {
-      res.redirect("/auth/login");
+      res.redirect("/");
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -90,14 +90,14 @@ router.post("/auth/signup", isLoggedOut, (req, res) => {
 });
 
 // GET /auth/login  (LOGIN)
-router.get("/auth/login", isLoggedOut, (req, res) => {
+router.get("/auth/login",  (req, res) => {
   res.render("auth/login");
 });
 
 
 
 // POST /auth/login  (LOGIN)
-router.post("/auth/login", isLoggedOut, (req, res, next) => {
+router.post("/auth/login", (req, res, next) => {
   const { username, email, password } = req.body;
 
  
@@ -138,12 +138,13 @@ router.post("/auth/login", isLoggedOut, (req, res, next) => {
           if (!isSamePassword) {
             res
               .status(400)
-              .render("auth/login", { errorMessage: "Wrong credentials.1234" });
+              .render("auth/login", { errorMessage: "Wrong credentials.!" });
             return;
           }
 
           // Add the user object to the session object
           req.session.currentUser = user.toObject();
+
           // Remove the password field
           delete req.session.currentUser.password;
           res.redirect('/');
@@ -155,7 +156,7 @@ router.post("/auth/login", isLoggedOut, (req, res, next) => {
 });
 
 // GET /auth/logout
-router.get("/auth/logout", isLoggedIn, (req, res) => {
+router.get("/auth/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });

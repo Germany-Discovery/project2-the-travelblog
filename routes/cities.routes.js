@@ -2,6 +2,8 @@ const express = require('express');
 const Cities = require("../models/Cities.model");
 const router = express.Router();
 
+const isLoggedIn = require("../middleware/isLoggedIn");
+
 
 // READ: display all Cities
 router.get("/cities", (req, res, next) => {
@@ -12,7 +14,6 @@ router.get("/cities", (req, res, next) => {
             const data = {
                 cities: citiesFromDB
             }
-
             res.render("cities/cities-list", data);
         })
         .catch((e) => {
@@ -24,7 +25,7 @@ router.get("/cities", (req, res, next) => {
 
 
 // CREATE: display form
-router.get("/cities/cities-create", (req, res, next) => {
+router.get("/cities/cities-create", isLoggedIn, (req, res, next) => {
     Cities.find()
         .then( citiesFromDB => {
             const data = {
@@ -40,7 +41,7 @@ router.get("/cities/cities-create", (req, res, next) => {
 
 
 // CREATE: process form
-router.post("/cities/cities-create", (req, res, next) => {
+router.post("/cities/cities-create", isLoggedIn, (req, res, next) => {
 
     const newCities = {
         title: req.body.title,
@@ -65,10 +66,8 @@ router.post("/cities/cities-create", (req, res, next) => {
         });
 });
 
-
-
 // UPDATE: display form
-router.get('/cities/:citiesId/edit', async (req, res, next) => {
+router.get('/cities/:citiesId/edit', isLoggedIn, async (req, res, next) => {
     const { citiesId } = req.params;
 
     try {
@@ -90,7 +89,7 @@ router.get('/cities/:citiesId/edit', async (req, res, next) => {
 
 
 // UPDATE: process form
-router.post('/cities/:citiesId/edit', (req, res, next) => {
+router.post('/cities/:citiesId/edit', isLoggedIn, (req, res, next) => {
     const { citiesId } = req.params;
     const { title, description, rating, population, season, imageUrl } = req.body;
     console.log("*&*&*******  Cities ID 2  ");
@@ -120,7 +119,7 @@ router.get("/cities/:citiesId", (req, res, next) => {
 
 
 // DELETE: delete city
-router.post('/cities/:citiesId/delete', (req, res, next) => {
+router.post('/cities/:citiesId/delete', isLoggedIn, (req, res, next) => {
     const { citiesId } = req.params;
 
     Cities.findByIdAndDelete(citiesId)

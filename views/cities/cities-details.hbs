@@ -1,3 +1,11 @@
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{appTitle}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
 
 <h2>Cities Details: {{this.title}}</h2>
 
@@ -7,6 +15,45 @@
     </div>
 </li>
 
+<table>
+        <!-- Existing table rows -->
+        <tr>
+          <td class="border">
+            <h3>Title:</h3>
+            <p>{{this.title}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="border">
+            <h3>Description:</h3>
+            <p>{{this.description}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="border">
+            <h3>Rating:</h3>
+            <p>{{this.rating}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="border">
+            <h3>Population:</h3>
+            <p>{{this.population}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="border">
+            <h3>Season:</h3>
+            <p>{{this.season}}</p>
+          </td>
+        </tr>
+<tr><td class="border">
+   <a href="/cities">Back</a> </td>
+   </tr>
+</Table>
+
+
+<!--
 <h3>Title:</h3>
 <p>{{this.title}}</p>
 
@@ -23,5 +70,4 @@
 <h3>Season:</h3>
 <p>{{this.season}}</p>
 
-
-<a href="/cities">Back</a>
+-->

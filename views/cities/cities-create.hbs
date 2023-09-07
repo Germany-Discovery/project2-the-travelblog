@@ -1,43 +1,70 @@
-<h2>Create City</h2>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<table>
+<TH><h2>Create City</h2></TH>
+</table>
 
 <form method="POST" action="/cities/cities-create">
 
-<div class="border">
-   
+    <div class="border">
+        <table>
 
-    <label> Title:
-        <input type="text" name="title" />
-    </label></p>
+            <tr>
+                <TD><label> Title:
+                        <input type="text" name="title" />
+                    </label>
+                </TD>
+            </tr>
+            <tr>
+                <TD><label> Description:
+                        <textarea name="description" cols="30" rows="2"> </textarea>
+                    </label> </TD>
+            </tr>
 
-    <p><label> Description:
-        <textarea name="description" cols="30" rows="2"> </textarea>
-    </label></p>
+            <tr>
+                <TD><label> Rate :
+                        <input type="number" name="rating" min="1" max="5" />
+                    </label> </TD>
+            </tr>
 
-    <p><label> Rate :
-        <input type="number" name="rating" min="1" max="5" />
-    </label></p>
+            <tr>
+                <TD><label> Images:
+                        <input type="file" name="imageUrl" accept="image/*" />
+                    </label></p>
 
-    <p><label> Images:
-        <input type="file" name="imageUrl" accept="image/*" />
-    </label></p>
+            <tr>
+                <TD><label> Population:
+                        <input type="number" name="population" />
+                    </label> </TD>
+            </tr>
 
-    <p><label> Population:
-        <input type="number" name="population" />
-    </label></p>
+            <tr>
+                <TD>
+                    <label for="season"> Season:
+                        <select name="season" id="season">
+                            <option value="Spring">Spring</option>
+                            <option value="Summer">Summer</option>
+                            <option value="Autumn">Autumn</option>
+                            <option value="Winter">Winter</option>
+                        </select>
 
+                    </label>
+                </TD>
+            </tr>
 
-    <label for="season"> Season:
-    <select name="season" id="season">
-        <option value="Spring">Spring</option>
-        <option value="Summer">Summer</option>
-        <option value="Autumn">Autumn</option>
-        <option value="Winter">Winter</option>
-    </select>
-
-    </label></p>
-
-    <button type="submit"> Create </button>
+            <tr>
+                <TD>
+                    <button type="submit"> Create </button>
+                </TD>
+            </tr>
 
     </div>
+
+    </table>
 
 </form>
