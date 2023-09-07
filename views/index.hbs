@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,25 +11,39 @@
         /* Style for the container */
         .image-container {
             display: flex;
-            justify-content: space-between; /* Images will be evenly spaced */
-            flex-wrap: wrap; /* Wrap to the next line if the screen is narrow */
+            justify-content: space-between;
+            /* Images will be evenly spaced */
+            flex-wrap: wrap;
+            /* Wrap to the next line if the screen is narrow */
         }
 
         /* Style for individual images */
         .image {
-            width: 30%; /* Adjust the width as needed */
-            margin-bottom: 20px; /* Add spacing between images */
+            width: 30%;
+            /* Adjust the width as needed */
+            margin-bottom: 20px;
+            /* Add spacing between images */
         }
 
-         /* Style for the footer */
+        .image2 {
+            width: 20%;
+            /* Adjust the width as needed */
+            margin-bottom: 20px;
+            /* Add spacing between images */
+            height: auto;
+        }
+
+        /* Style for the footer */
         footer {
-            background-color: #e91414;
+            background-color: grey;
             color: #fff;
             text-align: center;
-            padding: 15px 0;
+            padding: 10px;
+
         }
     </style>
 </head>
+
 <body>
     <h1>{{appTitle}}</h1>
 
@@ -38,13 +53,60 @@
         <img class="image" src="/images/Munichcvr.jpg" alt="Image 2">
         <img class="image" src="/images/bavariacvr.jpg" alt="Image 3">
     </div>
+<br>
+<h2> Travel Services</h2>
+<br>
 
-     <!-- Footer -->
+    <section>
+
+        <div class="image-container">
+
+            <div class="border1">
+                <div class="borderDetails">
+                     <a href="https://www.skyscanner.com" target="_blank"><img src="/images/flight.jpg" alt="Flight Services">Flight</a>
+                   
+                </div>
+            </div>
+
+
+            <div class="border1">
+                <div class="borderDetails">
+                    <a href="https://www.tripadvisor.com" target="_blank"><img src="/images/food.jpg" alt="Food Services">Food</a>
+                </div>
+
+
+            </div>
+
+            <div class="border1">
+                <div class="borderDetails">
+                    <a href="https://www.bahn.com" target="_blank"><img src="/images/Db.jpg" alt="Travel Services">Transporation</a>
+                </div>
+             
+            </div>
+
+
+            <div class="border1">
+                <div class="borderDetails">
+                    <a href="https://www.booking.com" target="_blank">  <img src="/images/hotel.jpg" alt="Hotel Services">Hotel</a>
+                </div>
+        
+
+            </div>
+
+        </div>
+
+        </div>
+
+    </section>
+
+
+    <br><br>
+    <!-- Footer -->
     <footer>
-        <tr>&copy; 2023 
-        
+        <tr>&copy; 2023
+            <img class="image2" src="/images/icon.png">
         </tr>
-        
+
     </footer>
 
     <!-- Bootstrap JS and jQuery dependencies -->
@@ -52,5 +114,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
 </body>
-</html>
 
+</html>
